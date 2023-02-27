@@ -11,6 +11,7 @@ export default function List() {
     setCards(data)
   }, [])
 
+  
 
   return (
     <div className={styles.list}>

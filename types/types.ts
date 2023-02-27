@@ -3,9 +3,13 @@ export type Skill = {
   description:string
 }
 
+export type ImageItem = {
+  url:string;
+  isActive:boolean
+}
+
 export type CardType = {
   name:string;
   role:string;
-  image:string;
-  skills:Skill[]
+  images:ImageItem[];
 }
