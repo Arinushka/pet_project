@@ -5,19 +5,19 @@ import {useEffect, useState} from "react";
 import {useStore} from '../../store/store'
 
 export default function List() {
-  const {cards, setCards, deleteCard} = useStore((state) => state)
+  const {cards, setCards, deleteCard, handleCardClick, activeCard, direction} = useStore((state) => state)
 
   useEffect(() => {
     setCards(data)
   }, [])
 
-  
+ 
 
   return (
     <div className={styles.list}>
       {
         cards.map((card, n) => {
-          return <Card key={n} card={card} deleteCard={deleteCard}/>
+          return <Card key={n} card={card} deleteCard={deleteCard} handleCardClick={handleCardClick} activeCard={activeCard} direction={direction}/>
         })
       }
     </div>
