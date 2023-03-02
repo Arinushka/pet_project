@@ -1,25 +1,26 @@
-import styles from './list.module.css'
 import data from './../../utils/utils.json'
 import Card from "@/components/card/card";
 import {useEffect, useState} from "react";
 import {useStore} from '../../store/store'
 
 export default function List() {
-  const {cards, setCards, deleteCard, handleCardClick, activeCard, direction} = useStore((state) => state)
+  const {cards, setCards, deleteCard, handleCardClick, direction} = useStore((state) => state)
 
   useEffect(() => {
     setCards(data)
   }, [])
 
- 
 
   return (
-    <div className={styles.list}>
-      {
-        cards.map((card, n) => {
-          return <Card key={n} card={card} deleteCard={deleteCard} handleCardClick={handleCardClick} activeCard={activeCard} direction={direction}/>
-        })
-      }
+    <div className='container text-center'>
+      <div className="row row-cols-3">
+        {
+          cards.map((card, n) => {
+            return <div key={n} className="col"><Card card={card} deleteCard={deleteCard}
+                                                      handleCardClick={handleCardClick}/></div>
+          })
+        }
+      </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ export type Skill = {
 
 export type ImageItem = {
   url:string;
-  isActive:boolean
+  isActive:string
 }
 
 export type CardType = {
